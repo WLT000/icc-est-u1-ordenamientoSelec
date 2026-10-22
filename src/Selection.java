@@ -1,5 +1,6 @@
 public class Selection{
 // Walter Loza
+// Walter Loza
     public void sort(int[] arreglo){
         int cambios = 0;
         int comparaciones = 0;
