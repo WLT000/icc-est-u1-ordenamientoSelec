@@ -13,6 +13,8 @@ public class Selection{
                     minimo = j;
                     
                 }
+            }
+            
             if (minimo != i){
                 int aux = arreglo[i];
                 arreglo[i] = arreglo[minimo];
@@ -20,7 +22,7 @@ public class Selection{
 
                 cambios++;
 
-            }
+            
           
             }
             System.out.println("==>" + cambios);

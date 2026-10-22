@@ -4,6 +4,7 @@ public class App {
         int[] original = {6, 5, 4, 1, 2, 3};
         int[] b = original.clone();
         int[] c = original.clone();
+        int[] d = original.clone();
 
         //USAR METODO DEL ARCHIVO (clase) BUBBLE
         //INSTANCIAR el archivo BUBBLE
@@ -11,16 +12,32 @@ public class App {
         Bubble bubble = new Bubble();
 
         // EJECUTAR CODIGO DEL ARCHIVO BUBBLE USO LA INSTANCIA
+
+        System.out.println("Bubble");
+
         printArreglo(b);
         bubble.sort(b);
         printArreglo(b);
 
         System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+        System.out.println("Selection");
 
         Selection selection = new Selection();
         printArreglo(c);
         selection.sort(c);
         printArreglo(c);
+
+        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+        System.out.println("Insertion");
+
+        Insertion insertion = new Insertion();
+        System.out.println("Original");
+        printArreglo(d);
+        insertion.sort(d);
+        System.out.println("Ordenado des");
+        printArreglo(d);
+
+
 
 
     }

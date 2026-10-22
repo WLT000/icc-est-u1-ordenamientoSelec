@@ -9,6 +9,8 @@ public class Bubble {
             for(int j = 1; j < arreglo.length - 1 ; j++) {
                 comparaciones ++ ;
                 //COMPARACION IF
+
+            
                 if (arreglo[j-1] > arreglo[j]) {
                     cambios++;
                     combinaciones = true;
