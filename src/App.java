@@ -1,6 +1,54 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+import models.Estudiante;
+
 public class App {
-      //David Baroja, Walter Loza
+      //Walter Loza
     public static void main(String[] args) throws Exception {
+        //runEjemplosPrimitivos();
+        runEjemplosObjetos();
+        runComparators();
+
+    }
+    
+    private static void runComparators() {
+        Integer[] original = {6, 5, 4, 1, 2, 3};
+        //Arrays.sort - ORDENA ARREGLOS POR SU FORMA NATURAL
+        Arrays.sort(original);
+        for (int i = 0 ; i < original.length; i++){
+            System.out.println(original[i]);
+        }
+    System.out.println("----------------------------");
+
+    
+        Arrays.sort(original, Comparator.reverseOrder());
+        for (int i = 0 ; i < original.length; i++){
+            System.out.println(original[i]);
+        }
+
+    }
+
+    private static void runEjemplosObjetos(){
+        //Creo un estudiante y lo guardo en una variable
+        Estudiante e1 = new Estudiante("Juan", 10);
+
+        Estudiante[] estudiantes = {e1,
+                                    new Estudiante("Maria", 7),
+                                    new Estudiante("Diego", 3.5),
+                                    new Estudiante("Pedro", 6.8),
+
+        };
+
+        Bubble bubble = new Bubble();
+        System.out.println("Original");
+        bubble.sortEstudiantesNOTA(estudiantes);
+        printEstudiantes(estudiantes);
+
+    }
+
+
+    public static void runEjemplosPrimitivos(){
         int[] original = {6, 5, 4, 1, 2, 3};
         int[] b = original.clone();
         int[] c = original.clone();
@@ -47,6 +95,13 @@ public class App {
             System.out.print(arr[i] + "-");
         System.out.println();
     }
+
+    public static void printEstudiantes(Estudiante[] estudiante) {
+        for (int i = 0; i < estudiante.length; i++) 
+            System.out.print(estudiante[i] + "-");
+        System.out.println();
+    }
+
  }
     
 

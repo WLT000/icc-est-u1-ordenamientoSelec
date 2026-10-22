@@ -1,3 +1,5 @@
+import models.Estudiante;
+
 public class Bubble {
     //Walter Loza
     public int[] sort(int[]arreglo){
@@ -30,5 +32,25 @@ public class Bubble {
         System.out.println("comparaciones" + comparaciones);
         return arreglo;
     
+    }
+
+    public void sortEstudiantesNOTA(Estudiante[] estudiante){
+        for (int i = 0; i < estudiante.length; i ++){
+            boolean cambio = false;
+            for (int j = 0; j < estudiante.length - i - 1; j++) {
+                if(estudiante[j].getNota() > estudiante[j+1].getNota()){  //COMPARACIONES
+                    //INTERCAMBIOS
+                    Estudiante aux = estudiante[j];
+                    estudiante[j] = estudiante[j + 1];
+                    estudiante[j + 1] = aux;
+                    cambio = true;
+                }
+            }
+            if (!cambio)
+            break;
+        }
+        
+    }
+    public void sortEstudiantesNAME(Estudiante[] estudiante){
     }
 }
