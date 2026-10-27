@@ -8,7 +8,7 @@ public class Estudiante {
     private double nota;
 
     //constructor lleno
-    public Estudiante(String name, double nota){
+    public Estudiante(String nombre, double nota){
         this.nombre = nombre;
         this.nota = nota;
 

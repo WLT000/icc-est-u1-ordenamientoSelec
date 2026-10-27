@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 import models.Estudiante;
 
@@ -8,7 +10,56 @@ public class App {
     public static void main(String[] args) throws Exception {
         //runEjemplosPrimitivos();
         //runEjemplosObjetos();
-        runComparators();
+        //runComparators();
+        //runComparatorsObj();
+        runComparatorObj2();
+        
+    }
+    
+
+    private static void runComparatorObj2(){
+        Estudiante el = new Estudiante("Juan", 10);
+        List<Estudiante> estudiantesLista = new ArrayList<>(List.of(el,
+                                    new Estudiante("Maria", 7),
+                                    new Estudiante("Diego", 3.5),
+                                    new Estudiante("Pedro", 6.8)));
+        estudiantesLista.sort(null);
+        System.out.println(estudiantesLista);
+        System.out.println("-----------------------------");
+    
+
+
+        Estudiante e1 = new Estudiante("Juan", 10);
+        Estudiante[] estudiantes = {e1,
+                                    new Estudiante("Maria", 7),
+                                    new Estudiante("Diego", 3.5),
+                                    new Estudiante("Pedro", 6.8),
+
+        };
+
+        /*public double getNota(Estudiante e){
+        return e.getNota;
+        } la flecha -> es como crear un getter.*/
+        Comparator.naturalOrder();
+        Comparator.reverseOrder();
+        Comparator<Estudiante> compNota =  Comparator.comparingDouble(e -> e.getNota());
+        Arrays.sort(estudiantes, compNota);
+        for(int i = 0; i < estudiantes.length; i++){
+            System.out.print(estudiantes[i]);
+        }
+
+
+    }
+    private static void runComparatorsObj(){
+        List<Integer>numeros = new ArrayList<>(List.of(5, 6, 4, 1, 2, 3));
+        //oRDENDE MENOR A MAYOR
+        numeros.sort(Comparator.naturalOrder());
+        numeros.sort(null);
+        System.out.println(numeros);    
+        System.out.println("------Orden de mayor a menor------");
+        //Orden de mayor a menor
+        numeros.sort(Comparator.reverseOrder());
+        System.out.println(numeros);
 
     }
     
@@ -32,7 +83,6 @@ public class App {
     private static void runEjemplosObjetos(){
         //Creo un estudiante y lo guardo en una variable
         Estudiante e1 = new Estudiante("Juan", 10);
-
         Estudiante[] estudiantes = {e1,
                                     new Estudiante("Maria", 7),
                                     new Estudiante("Diego", 3.5),
