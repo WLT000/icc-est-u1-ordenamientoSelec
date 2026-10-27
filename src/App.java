@@ -7,7 +7,7 @@ public class App {
       //Walter Loza
     public static void main(String[] args) throws Exception {
         //runEjemplosPrimitivos();
-        runEjemplosObjetos();
+        //runEjemplosObjetos();
         runComparators();
 
     }
