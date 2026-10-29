@@ -32,4 +32,8 @@ public class Selection{
         System.out.println("cambios:" + cambios);
         System.out.println("Comparaciones: " + comparaciones);
     }
+    
+
+
+
 }

@@ -12,7 +12,10 @@ public class App {
         //runEjemplosObjetos();
         //runComparators();
         //runComparatorsObj();
-        runComparatorObj2();
+        //runComparatorObj2();
+
+        Comparators comparator = new Comparators();
+        
         
     }
     
