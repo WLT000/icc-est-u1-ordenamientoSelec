@@ -3,7 +3,7 @@ package models;
     // Una clase Estudiante
     //
 
-public class Estudiante {
+public class Estudiante implements Comparable<Estudiante>{
     private String nombre;
     private double nota;
 
@@ -40,6 +40,24 @@ public class Estudiante {
     @Override
     public String toString() {
         return "Estudiante [" + nombre + ", " + nota + "]";
+    }
+
+    /**
+     * Orden natural
+     * 1.Nota Ascendente
+     * 2.Nombre Ascendente en el caso de que las notas sean iguales
+     * @param oObjeto tipo Estudiante con el cual voy a comparar
+     * @return indice de comparacion(+, -, 0)
+     */
+    @Override
+    public int compareTo(Estudiante e2) {
+        int compNota = Double.compare(this.getNota(), e2.getNota());
+        if ( compNota != 0)
+            return compNota;
+        return this.getNombre().compareTo(e2.getNombre());
+
+
+
     }
     
     

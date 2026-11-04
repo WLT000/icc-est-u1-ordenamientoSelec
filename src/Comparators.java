@@ -25,7 +25,11 @@ public class Comparators {
         ejemplo4();
         ejemplo5();
         ejemplo6();
+        ejemplo7();
+        ejemplo8();
         ejemplo9();
+        ejemplo10();
+        ejemplo11();
     }
 
     private void print(List<Estudiante> list){
@@ -132,8 +136,12 @@ public class Comparators {
             if (comp != 0)
                 return comp;
 
-            return e1.getName().compareTo;
-        }
+            return e1.getNombre().compareTo(e2.getNombre());
+        };
+        lista.sort(comparator);
+        print(lista);
+
+
    }
    /*Ordenar por nota ASENDENTE Y POR NOMBRE ASCENDENTE 
     *COmparator -> POR VALOR    
@@ -175,10 +183,15 @@ public class Comparators {
         System.out.println("Ejemplo 11:");
         List<Estudiante> lista = new ArrayList<>(estList);
         Comparator<Estudiante> comparator = Comparator
-                .<Estudiante>comparingDouble(e -> e.getNota())
-                .reversed()
-                .thenComparing(Estudiante::getNombre);
-       lista.sort(comparator);
+                .<Estudiante>comparingDouble(e -> {
+                    double notaAjustada = e.getNota();
+                    if (notaAjustada < 7) {
+                        notaAjustada += 2;
+                    }
+                    return Math.min(notaAjustada, 10);
+                })
+                .thenComparing(Comparator.comparing(Estudiante::getNombre).reversed());
+        lista.sort(comparator);
         print(lista);
     }
 
