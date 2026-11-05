@@ -41,6 +41,13 @@ public class Estudiante implements Comparable<Estudiante>{
     public String toString() {
         return "Estudiante [" + nombre + ", " + nota + "]";
     }
+    //@Overide 
+    //public int compareTo(Estudiante e2){
+    //  int compN = double.compare(this.getNota(), e2.getNota());
+    //  if (compN != 0) {
+    //  }
+    //  return this.getNombre().compareTo(e2.getNombre());//
+    //}
 
     /**
      * Orden natural
